@@ -49,7 +49,7 @@ export function HeroSlider() {
         >
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
+            style={{ backgroundImage: `url(${slides[currentSlide].image.src})` }}
           />
           {/* Cinematic Overlays */}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />

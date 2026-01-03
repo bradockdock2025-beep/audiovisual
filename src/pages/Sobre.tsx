@@ -52,7 +52,7 @@ const SobrePage = () => {
       <section className="relative h-[70vh] flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage2})` }}
+          style={{ backgroundImage: `url(${heroImage2.src})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="absolute inset-0 vignette" />
@@ -70,8 +70,8 @@ const SobrePage = () => {
               <span className="text-primary italic">uma visão cinematográfica</span>
             </h1>
             <p className="text-muted-foreground/90 text-lg md:text-xl max-w-2xl mt-6">
-              Somos um estúdio audiovisual dedicado à produção de vídeo, formação audiovisual e
-              narrativas cinematográficas para marcas, cinema e projetos autorais.
+              Somos um estúdio audiovisual especializado em produção de vídeo, cursos de video maker e narrativas
+              cinematográficas para marcas, cinema e projetos autorais.
             </p>
           </motion.div>
         </div>
@@ -103,7 +103,7 @@ const SobrePage = () => {
             >
               <div className="aspect-[4/5] relative overflow-hidden sticky top-32">
                 <img
-                  src={aboutStudio}
+                  src={aboutStudio.src}
                   alt="Retrato do diretor criativo no estúdio"
                   className="absolute inset-0 w-full h-full object-cover"
                 />

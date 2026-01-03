@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import type { StaticImageData } from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import projectDocumentary from "@/assets/project-documentary.jpg";
@@ -28,7 +29,7 @@ type Project = {
   title: string;
   category: string;
   year: string;
-  image: string;
+  image: StaticImageData;
   categoryKey: CategoryKey;
 };
 
@@ -197,7 +198,7 @@ const PortfolioPage = () => {
                 >
                   <div className="aspect-video relative overflow-hidden bg-muted">
                     <img
-                      src={project.image}
+                      src={project.image.src}
                       alt={project.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.03]"
                     />

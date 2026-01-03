@@ -43,7 +43,7 @@ const CursosPage = () => {
       <section className="relative h-[60vh] flex items-end">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage3})` }}
+          style={{ backgroundImage: `url(${heroImage3.src})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         

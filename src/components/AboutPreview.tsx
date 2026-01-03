@@ -50,7 +50,7 @@ export function AboutPreview() {
                   className="absolute inset-0"
                 >
                   <img
-                    src={founderImage}
+                    src={founderImage.src}
                     alt="Diretor criativo do estúdio"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
                   />

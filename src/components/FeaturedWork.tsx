@@ -1,5 +1,6 @@
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import type { StaticImageData } from "next/image";
 import { Play } from "lucide-react";
 import projectDocumentary from "@/assets/project-documentary.jpg";
 import projectCommercial from "@/assets/project-commercial.jpg";
@@ -23,7 +24,7 @@ type Project = {
   title: string;
   category: string;
   year: string;
-  image: string;
+  image: StaticImageData;
 };
 
 const projectsByCategory: Record<CategoryKey, Project[]> = {
@@ -260,7 +261,7 @@ function FeaturedProjectCard({ project, isInView }: { project: Project; isInView
     <a href={`/portfolio/${project.id}`} className="group relative block overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <img
-          src={project.image}
+          src={project.image.src}
           alt={project.title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
         />
@@ -298,7 +299,7 @@ function SecondaryProjectCard({ project }: { project: Project }) {
     <a href={`/portfolio/${project.id}`} className="block group relative overflow-hidden">
       <div className="relative aspect-[16/9] bg-muted overflow-hidden">
         <img
-          src={project.image}
+          src={project.image.src}
           alt={project.title}
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
         />
