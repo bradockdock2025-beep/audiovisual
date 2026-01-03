@@ -8,6 +8,8 @@ const stats = [
   { value: 40, suffix: "+", label: "Clientes satisfeitos" },
 ];
 
+const easeCinema = [0.25, 0.1, 0.25, 1] as const;
+
 const contentContainer = {
   hidden: { opacity: 0 },
   show: {
@@ -21,7 +23,7 @@ const contentItem = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+    transition: { duration: 0.8, ease: easeCinema },
   },
 };
 
@@ -38,7 +40,7 @@ export function AboutPreview() {
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.9, ease: easeCinema }}
             className="relative"
           >
             <div className="relative group">

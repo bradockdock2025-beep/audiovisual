@@ -11,6 +11,8 @@ import heroVideomakerOne from "@/assets/hero-videomaker-1.jpg";
 import heroVideomakerTwo from "@/assets/hero-videomaker-2.jpg";
 import heroVideomakerThree from "@/assets/hero-videomaker-3.jpg";
 
+const easeCinema = [0.25, 0.1, 0.25, 1] as const;
+
 const filters = [
   { key: "TODOS", label: "TODOS" },
   { key: "DOCUMENTÁRIO", label: "DOCUMENTÁRIO" },
@@ -134,7 +136,7 @@ const PortfolioPage = () => {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{ duration: 0.7, ease: easeCinema }}
           >
             <p className="text-editorial text-primary mb-4">Portfólio</p>
             <h1 className="text-display text-5xl md:text-7xl lg:text-8xl text-foreground">
@@ -184,7 +186,7 @@ const PortfolioPage = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{ duration: 0.4, ease: easeCinema }}
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
               {visibleProjects.map((project, index) => (

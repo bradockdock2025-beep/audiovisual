@@ -10,6 +10,8 @@ import heroVideomakerOne from "@/assets/hero-videomaker-1.jpg";
 import heroVideomakerTwo from "@/assets/hero-videomaker-2.jpg";
 import heroVideomakerThree from "@/assets/hero-videomaker-3.jpg";
 
+const easeCinema = [0.25, 0.1, 0.25, 1] as const;
+
 const categories = [
   { key: "filmes", label: "Filmes", total: 12 },
   { key: "videoclipes", label: "Videoclipes", total: 24 },
@@ -132,7 +134,7 @@ const revealContainer = {
 
 const revealItem = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeCinema } },
 };
 
 export function FeaturedWork() {
@@ -209,7 +211,7 @@ export function FeaturedWork() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -40 }}
-                transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.45, ease: easeCinema }}
                 className="grid gap-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)]"
               >
                 <motion.div
