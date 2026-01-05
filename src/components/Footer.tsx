@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import Link from "next/link";
 import { Instagram, Youtube, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
@@ -35,14 +35,14 @@ export function Footer() {
         <div className="grid grid-cols-12 gap-8">
           {/* Brand */}
           <div className="col-span-12 lg:col-span-4">
-            <a href="/" className="inline-block mb-6">
+            <Link href="/" className="inline-block mb-6">
               <span className="font-display text-3xl font-medium text-foreground tracking-tight">
                 Estúdio
               </span>
               <span className="font-display text-3xl font-light italic text-primary ml-1">
                 Visual
               </span>
-            </a>
+            </Link>
             
             <p className="text-muted-foreground font-light text-sm leading-relaxed max-w-xs mb-8">
               Criamos narrativas visuais que transcendem o comum. 
@@ -73,12 +73,12 @@ export function Footer() {
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm font-light text-foreground/70 hover:text-primary transition-colors duration-300"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

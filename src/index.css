@@ -9,97 +9,126 @@
 
 @layer base {
   :root {
-    /* Base - Deep charcoal with warmth */
-    --background: 220 15% 6%;
-    --foreground: 45 20% 92%;
+    /* Base - Warm light background */
+    --background: 38 30% 96%;
+    --foreground: 220 15% 14%;
 
-    /* Cards - Slightly elevated surfaces */
-    --card: 220 12% 9%;
-    --card-foreground: 45 20% 92%;
+    /* Cards - Soft elevated surfaces */
+    --card: 36 28% 94%;
+    --card-foreground: 220 15% 14%;
 
-    --popover: 220 12% 9%;
-    --popover-foreground: 45 20% 92%;
+    --popover: 36 28% 94%;
+    --popover-foreground: 220 15% 14%;
 
     /* Primary - Warm gold (cinema lighting) */
-    --primary: 42 75% 55%;
-    --primary-foreground: 220 15% 6%;
+    --primary: 42 75% 45%;
+    --primary-foreground: 40 30% 97%;
 
     /* Secondary - Soft warm gray */
-    --secondary: 220 8% 15%;
-    --secondary-foreground: 45 15% 85%;
+    --secondary: 36 18% 90%;
+    --secondary-foreground: 220 15% 18%;
 
     /* Muted - Subtle backgrounds */
-    --muted: 220 10% 12%;
-    --muted-foreground: 220 8% 55%;
+    --muted: 36 18% 92%;
+    --muted-foreground: 220 10% 40%;
 
     /* Accent - Teal/Cyan (cinematic color grading) */
-    --accent: 185 45% 45%;
-    --accent-foreground: 220 15% 6%;
+    --accent: 185 45% 35%;
+    --accent-foreground: 40 30% 97%;
 
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 45 20% 92%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 40 30% 97%;
 
-    --border: 220 10% 18%;
-    --input: 220 10% 18%;
-    --ring: 42 75% 55%;
+    --border: 36 16% 85%;
+    --input: 36 16% 85%;
+    --ring: 42 75% 45%;
 
     --radius: 0.25rem;
 
     /* Custom Cinema Colors */
-    --cinema-gold: 42 75% 55%;
+    --cinema-gold: 42 75% 45%;
     --cinema-gold-soft: 42 50% 70%;
-    --cinema-warm: 35 40% 50%;
-    --cinema-teal: 185 45% 45%;
+    --cinema-warm: 35 45% 55%;
+    --cinema-teal: 185 45% 35%;
     --cinema-teal-soft: 185 30% 60%;
-    --cinema-surface: 220 12% 9%;
-    --cinema-surface-elevated: 220 10% 12%;
-    --cinema-text-primary: 45 20% 92%;
-    --cinema-text-secondary: 220 8% 65%;
-    --cinema-text-muted: 220 8% 45%;
+    --cinema-surface: 36 25% 92%;
+    --cinema-surface-elevated: 36 22% 88%;
+    --cinema-text-primary: 220 15% 16%;
+    --cinema-text-secondary: 220 10% 38%;
+    --cinema-text-muted: 220 8% 46%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 15% 6%) 0%, hsl(220 12% 12%) 50%, hsl(220 15% 6%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(42 75% 55%) 0%, hsl(35 60% 45%) 100%);
-    --gradient-cinematic: linear-gradient(180deg, transparent 0%, hsl(220 15% 6% / 0.8) 50%, hsl(220 15% 6%) 100%);
-    --gradient-vignette: radial-gradient(ellipse at center, transparent 0%, hsl(220 15% 6% / 0.4) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(40 30% 98%) 0%, hsl(36 25% 94%) 50%, hsl(40 30% 98%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 75% 45%) 0%, hsl(35 60% 40%) 100%);
+    --gradient-cinematic: linear-gradient(180deg, transparent 0%, hsl(40 30% 97% / 0.9) 50%, hsl(40 30% 97%) 100%);
+    --gradient-vignette: radial-gradient(ellipse at center, transparent 0%, hsl(40 30% 97% / 0.6) 100%);
 
     /* Shadows */
-    --shadow-soft: 0 4px 30px hsl(0 0% 0% / 0.3);
-    --shadow-elevated: 0 8px 40px hsl(0 0% 0% / 0.5);
-    --shadow-gold: 0 4px 30px hsl(42 75% 55% / 0.15);
+    --shadow-soft: 0 4px 30px hsl(0 0% 0% / 0.12);
+    --shadow-elevated: 0 12px 40px hsl(0 0% 0% / 0.18);
+    --shadow-gold: 0 4px 30px hsl(42 75% 45% / 0.18);
 
-    /* Sidebar (dark theme) */
-    --sidebar-background: 220 15% 6%;
-    --sidebar-foreground: 45 20% 92%;
-    --sidebar-primary: 42 75% 55%;
-    --sidebar-primary-foreground: 220 15% 6%;
-    --sidebar-accent: 220 10% 12%;
-    --sidebar-accent-foreground: 45 20% 92%;
-    --sidebar-border: 220 10% 18%;
-    --sidebar-ring: 42 75% 55%;
+    /* Sidebar */
+    --sidebar-background: 38 30% 96%;
+    --sidebar-foreground: 220 15% 14%;
+    --sidebar-primary: 42 75% 45%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 36 18% 92%;
+    --sidebar-accent-foreground: 220 15% 18%;
+    --sidebar-border: 36 16% 85%;
+    --sidebar-ring: 42 75% 45%;
   }
 
   .dark {
-    /* Same as root - this is a dark-first design */
-    --background: 220 15% 6%;
+    /* Dark theme - softened */
+    --background: 220 15% 10%;
     --foreground: 45 20% 92%;
-    --card: 220 12% 9%;
+    --card: 220 12% 13%;
     --card-foreground: 45 20% 92%;
-    --popover: 220 12% 9%;
+    --popover: 220 12% 13%;
     --popover-foreground: 45 20% 92%;
-    --primary: 42 75% 55%;
-    --primary-foreground: 220 15% 6%;
-    --secondary: 220 8% 15%;
+    --primary: 42 75% 56%;
+    --primary-foreground: 220 15% 10%;
+    --secondary: 220 10% 18%;
     --secondary-foreground: 45 15% 85%;
-    --muted: 220 10% 12%;
-    --muted-foreground: 220 8% 55%;
+    --muted: 220 10% 16%;
+    --muted-foreground: 220 8% 60%;
     --accent: 185 45% 45%;
-    --accent-foreground: 220 15% 6%;
+    --accent-foreground: 220 15% 10%;
     --destructive: 0 62% 50%;
     --destructive-foreground: 45 20% 92%;
-    --border: 220 10% 18%;
-    --input: 220 10% 18%;
-    --ring: 42 75% 55%;
+    --border: 220 10% 22%;
+    --input: 220 10% 22%;
+    --ring: 42 75% 56%;
+
+    --cinema-gold: 42 75% 56%;
+    --cinema-gold-soft: 42 50% 70%;
+    --cinema-warm: 35 40% 55%;
+    --cinema-teal: 185 45% 45%;
+    --cinema-teal-soft: 185 30% 60%;
+    --cinema-surface: 220 12% 13%;
+    --cinema-surface-elevated: 220 10% 16%;
+    --cinema-text-primary: 45 20% 92%;
+    --cinema-text-secondary: 220 8% 70%;
+    --cinema-text-muted: 220 8% 52%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 10%) 0%, hsl(220 12% 16%) 50%, hsl(220 15% 10%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 75% 56%) 0%, hsl(35 60% 46%) 100%);
+    --gradient-cinematic: linear-gradient(180deg, transparent 0%, hsl(220 15% 10% / 0.8) 50%, hsl(220 15% 10%) 100%);
+    --gradient-vignette: radial-gradient(ellipse at center, transparent 0%, hsl(220 15% 10% / 0.45) 100%);
+
+    --shadow-soft: 0 4px 30px hsl(0 0% 0% / 0.28);
+    --shadow-elevated: 0 10px 45px hsl(0 0% 0% / 0.5);
+    --shadow-gold: 0 4px 30px hsl(42 75% 56% / 0.18);
+
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 45 20% 92%;
+    --sidebar-primary: 42 75% 56%;
+    --sidebar-primary-foreground: 220 15% 10%;
+    --sidebar-accent: 220 10% 16%;
+    --sidebar-accent-foreground: 45 20% 92%;
+    --sidebar-border: 220 10% 22%;
+    --sidebar-ring: 42 75% 56%;
   }
 }
 

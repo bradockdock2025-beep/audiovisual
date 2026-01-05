@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -92,12 +93,12 @@ export function ServicesSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16 md:mt-24"
         >
-          <a
+          <Link
             href="/servicos"
             className="inline-flex items-center gap-4 text-editorial text-xs border border-primary/50 px-8 py-4 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-400"
           >
             Explorar todos os serviços
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

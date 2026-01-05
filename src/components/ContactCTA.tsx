@@ -1,7 +1,10 @@
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+
+const MotionLink = motion(Link);
 
 export function ContactCTA() {
   const ref = useRef(null);
@@ -36,7 +39,7 @@ export function ContactCTA() {
             Conte-nos a sua visão.
           </p>
 
-          <motion.a
+          <MotionLink
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -45,7 +48,7 @@ export function ContactCTA() {
           >
             Iniciar Conversa
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-          </motion.a>
+          </MotionLink>
         </motion.div>
       </div>
 

@@ -1,1 +1,7 @@
-{"/_app":"pages/_app.js","/404":"pages/404.html","/contato":"pages/contato.html","/cursos":"pages/cursos.html","/":"pages/index.html","/portfolio":"pages/portfolio.html","/servicos":"pages/servicos.html","/sobre":"pages/sobre.html","/_error":"pages/_error.js","/_document":"pages/_document.js"}
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/cursos": "pages/cursos.js",
+  "/": "pages/index.js"
+}

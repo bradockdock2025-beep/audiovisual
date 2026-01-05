@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import founderImage from "@/assets/hero-videomaker-2.jpg";
@@ -27,6 +29,8 @@ const contentItem = {
   },
 };
 
+const MotionLink = motion(Link);
+
 export function AboutPreview() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-120px" });
@@ -51,10 +55,12 @@ export function AboutPreview() {
                   transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute inset-0"
                 >
-                  <img
-                    src={founderImage.src}
+                  <Image
+                    src={founderImage}
                     alt="Diretor criativo do estúdio"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 80vw"
+                    className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
                   />
                 </motion.div>
 
@@ -143,7 +149,7 @@ export function AboutPreview() {
               ))}
             </motion.div>
 
-            <motion.a
+            <MotionLink
               variants={contentItem}
               href="/sobre"
               className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(255,200,120,0.2)]"
@@ -151,7 +157,7 @@ export function AboutPreview() {
               <span className="transition-transform duration-300 group-hover:-translate-y-0.5">
                 Conhecer o estúdio
               </span>
-            </motion.a>
+            </MotionLink>
           </motion.div>
         </div>
       </div>

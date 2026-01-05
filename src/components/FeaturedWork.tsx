@@ -1,6 +1,7 @@
+import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import type { StaticImageData } from "next/image";
 import { Play } from "lucide-react";
 import projectDocumentary from "@/assets/project-documentary.jpg";
 import projectCommercial from "@/assets/project-commercial.jpg";
@@ -244,14 +245,14 @@ export function FeaturedWork() {
           animate={isInView ? "show" : "hidden"}
           className="mt-12 md:mt-16 flex justify-center"
         >
-          <a
+          <Link
             href="/portfolio"
             className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(255,200,120,0.2)]"
           >
             <span className="transition-transform duration-300 group-hover:-translate-y-0.5">
               Ver todos os projetos
             </span>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
@@ -260,12 +261,14 @@ export function FeaturedWork() {
 
 function FeaturedProjectCard({ project, isInView }: { project: Project; isInView: boolean }) {
   return (
-    <a href={`/portfolio/${project.id}`} className="group relative block overflow-hidden">
+    <Link href={`/portfolio/${project.id}`} className="group relative block overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-        <img
-          src={project.image.src}
+        <Image
+          src={project.image}
           alt={project.title}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+          fill
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
         />
         <div className="absolute inset-0" style={{ background: "var(--gradient-cinematic)" }} />
         <div className="absolute inset-0 bg-background/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -292,18 +295,20 @@ function FeaturedProjectCard({ project, isInView }: { project: Project; isInView
 
         <div className="absolute inset-0 border border-transparent transition-colors duration-500 group-hover:border-primary/30" />
       </div>
-    </a>
+    </Link>
   );
 }
 
 function SecondaryProjectCard({ project }: { project: Project }) {
   return (
-    <a href={`/portfolio/${project.id}`} className="block group relative overflow-hidden">
+    <Link href={`/portfolio/${project.id}`} className="block group relative overflow-hidden">
       <div className="relative aspect-[16/9] bg-muted overflow-hidden">
-        <img
-          src={project.image.src}
+        <Image
+          src={project.image}
           alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+          fill
+          sizes="(min-width: 1024px) 35vw, 100vw"
+          className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
@@ -323,6 +328,6 @@ function SecondaryProjectCard({ project }: { project: Project }) {
           </p>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

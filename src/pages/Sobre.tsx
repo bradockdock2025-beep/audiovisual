@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Award, Clapperboard, Film, Users } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
@@ -102,10 +104,12 @@ const SobrePage = () => {
               className="col-span-12 lg:col-span-5"
             >
               <div className="aspect-[4/5] relative overflow-hidden sticky top-32">
-                <img
-                  src={aboutStudio.src}
+                <Image
+                  src={aboutStudio}
                   alt="Retrato do diretor criativo no estúdio"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 35vw, 100vw"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,6,6,0.1),rgba(8,8,8,0.65),rgba(120,90,40,0.6))]" />
                 <div className="film-grain absolute inset-0" />
@@ -229,12 +233,12 @@ const SobrePage = () => {
             <p className="text-muted-foreground/90 text-lg mt-6">
               Partilhe a sua visão connosco e desenhamos juntos a narrativa certa para a sua marca.
             </p>
-            <a
+            <Link
               href="/contato"
               className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(255,200,120,0.2)] mt-10"
             >
               Fale connosco
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

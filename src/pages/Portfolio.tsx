@@ -1,6 +1,7 @@
+import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import type { StaticImageData } from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import projectDocumentary from "@/assets/project-documentary.jpg";
@@ -120,6 +121,8 @@ const projects: Project[] = [
 
 const sortedProjects = [...projects].sort((a, b) => Number(b.year) - Number(a.year));
 
+const MotionLink = motion(Link);
+
 const PortfolioPage = () => {
   const [activeFilter, setActiveFilter] = useState<FilterKey>("TODOS");
   const visibleProjects =
@@ -190,7 +193,7 @@ const PortfolioPage = () => {
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
               {visibleProjects.map((project, index) => (
-                <motion.a
+                <MotionLink
                   key={project.id}
                   href={`/portfolio/${project.id}`}
                   initial={{ opacity: 0, y: 20 }}
@@ -199,10 +202,12 @@ const PortfolioPage = () => {
                   className="group block"
                 >
                   <div className="aspect-video relative overflow-hidden bg-muted">
-                    <img
-                      src={project.image.src}
+                    <Image
+                      src={project.image}
                       alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.03]"
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.03]"
                     />
                     <div className="absolute inset-0 bg-background/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
@@ -215,7 +220,7 @@ const PortfolioPage = () => {
                     </div>
                     <span className="text-editorial text-xs text-muted-foreground">{project.year}</span>
                   </div>
-                </motion.a>
+                </MotionLink>
               ))}
             </motion.div>
           </AnimatePresence>
