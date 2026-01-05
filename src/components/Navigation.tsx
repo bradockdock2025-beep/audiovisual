@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, Moon, Sun, X } from "lucide-react";
-import { useTheme } from "next-themes";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Início", href: "/" },
@@ -18,8 +17,6 @@ const MotionLink = motion(Link);
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,13 +25,6 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  const isDark = isMounted && (resolvedTheme ?? "dark") === "dark";
-  const handleThemeToggle = () => setTheme(isDark ? "light" : "dark");
 
   return (
     <>
@@ -76,61 +66,25 @@ export function Navigation() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-4">
-            {/* CTA Button */}
-            <MotionLink
-              href="/contato"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.2 }}
-              className="text-editorial text-xs border border-primary/50 px-6 py-3 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-400"
-            >
-              Iniciar Projeto
-            </MotionLink>
+          {/* CTA Button */}
+          <MotionLink
+            href="/contato"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+            className="hidden lg:block text-editorial text-xs border border-primary/50 px-6 py-3 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-400"
+          >
+            Iniciar Projeto
+          </MotionLink>
 
-            <button
-              type="button"
-              onClick={handleThemeToggle}
-              aria-label="Alternar tema"
-              aria-pressed={isDark}
-              className="relative inline-flex h-10 w-10 items-center justify-center border border-border/60 bg-background/40 text-foreground/80 transition-all duration-400 hover:text-foreground hover:border-primary/60 hover:bg-muted/40"
-            >
-              {isMounted ? (
-                <span className="transition-opacity duration-300">
-                  {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-                </span>
-              ) : (
-                <span className="h-4 w-4" aria-hidden />
-              )}
-            </button>
-          </div>
-
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              type="button"
-              onClick={handleThemeToggle}
-              aria-label="Alternar tema"
-              aria-pressed={isDark}
-              className="relative inline-flex h-10 w-10 items-center justify-center border border-border/60 bg-background/40 text-foreground/80 transition-all duration-400 hover:text-foreground hover:border-primary/60 hover:bg-muted/40"
-            >
-              {isMounted ? (
-                <span className="transition-opacity duration-300">
-                  {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-                </span>
-              ) : (
-                <span className="h-4 w-4" aria-hidden />
-              )}
-            </button>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative z-50 p-2 text-foreground"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden relative z-50 p-2 text-foreground"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </motion.header>
 

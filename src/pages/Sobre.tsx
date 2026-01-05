@@ -111,7 +111,7 @@ const SobrePage = () => {
                   sizes="(min-width: 1024px) 35vw, 100vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,6,6,0.1),rgba(8,8,8,0.65),rgba(120,90,40,0.6))]" />
+                <div className="absolute inset-0 bg-[image:var(--overlay-image-strong)]" />
                 <div className="film-grain absolute inset-0" />
                 <div className="absolute bottom-0 left-0 right-0 px-6 pb-6 pt-16 bg-gradient-to-t from-background/90 via-background/40 to-transparent">
                   <p className="text-[0.65rem] uppercase tracking-[0.32em] text-foreground/80">
@@ -235,7 +235,7 @@ const SobrePage = () => {
             </p>
             <Link
               href="/contato"
-              className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(255,200,120,0.2)] mt-10"
+              className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[var(--shadow-glow)] mt-10"
             >
               Fale connosco
             </Link>

@@ -14,9 +14,9 @@ import {
   Users,
 } from "lucide-react";
 import heroImage3 from "@/assets/hero-videomaker-3.jpg";
-import courseImageEssencial from "@/assets/project-shortfilm.jpg";
-import courseImageFoto from "@/assets/project-commercial.jpg";
-import courseImageColor from "@/assets/project-musicvideo.jpg";
+import courseImageEssencial from "@/assets/cameraman-1.jpg";
+import courseImageFoto from "@/assets/cameraman-2.jpg";
+import courseImageColor from "@/assets/cameraman-3.jpg";
 
 const courses = [
   {
@@ -36,7 +36,7 @@ const courses = [
       "Projeto final com direção de fotografia",
     ],
     image: courseImageEssencial,
-    imageAlt: "Bastidores de filmagem cinematográfica",
+    imageAlt: "Operador de camera filmando em area externa",
     glow:
       "radial-gradient(120% 120% at 0% 0%, rgba(255,200,120,0.18), transparent 70%)",
   },
@@ -57,7 +57,7 @@ const courses = [
       "Campanha curta como projeto final",
     ],
     image: courseImageFoto,
-    imageAlt: "Equipe ajustando luz em set publicitário",
+    imageAlt: "Operador de camera com equipamento de transmissao",
     glow:
       "radial-gradient(120% 120% at 100% 0%, rgba(60,150,150,0.22), transparent 70%)",
   },
@@ -78,7 +78,73 @@ const courses = [
       "Entrega e versões com QC",
     ],
     image: courseImageColor,
-    imageAlt: "Monitor exibindo gradação de cor em pós-produção",
+    imageAlt: "Cameraman em campo de futebol",
+    glow:
+      "radial-gradient(120% 120% at 0% 100%, rgba(255,180,120,0.2), transparent 70%)",
+  },
+];
+
+const contests = [
+  {
+    id: 1,
+    title: "Preparação para concursos",
+    subtitle: "Editais e critérios",
+    duration: "8 semanas",
+    students: "Máx. 20",
+    level: "Todos os níveis",
+    format: "Mentoria + simulados",
+    badge: "Foco em aprovação",
+    description:
+      "Estratégia de edital, organização do portfólio e simulados para ganhar segurança técnica.",
+    highlights: [
+      "Checklist técnico e documental",
+      "Simulados com correção orientada",
+      "Portfólio com narrativa consistente",
+    ],
+    image: courseImageEssencial,
+    imageAlt: "Operador de camera filmando em area externa",
+    glow:
+      "radial-gradient(120% 120% at 0% 0%, rgba(255,200,120,0.18), transparent 70%)",
+  },
+  {
+    id: 2,
+    title: "Prova prática e portfólio",
+    subtitle: "Execução com linguagem",
+    duration: "6 semanas",
+    students: "Máx. 15",
+    level: "Intermediário",
+    format: "Laboratório + revisão",
+    badge: "Nova turma",
+    description:
+      "Captação, direção e finalização voltadas para avaliação técnica e narrativa.",
+    highlights: [
+      "Briefing realista de banca",
+      "Direção de fotografia aplicada",
+      "Entrega com padrão técnico",
+    ],
+    image: courseImageFoto,
+    imageAlt: "Operador de camera com equipamento de transmissao",
+    glow:
+      "radial-gradient(120% 120% at 100% 0%, rgba(60,150,150,0.22), transparent 70%)",
+  },
+  {
+    id: 3,
+    title: "Narrativa para banca",
+    subtitle: "Projeto guiado",
+    duration: "10 semanas",
+    students: "Máx. 12",
+    level: "Avançado",
+    format: "Mentoria + apresentação",
+    badge: "Intensivo",
+    description:
+      "Construção de assinatura visual com foco em consistência, impacto e defesa do projeto.",
+    highlights: [
+      "Pitch e argumentação visual",
+      "Sequência com ritmo e continuidade",
+      "Revisões orientadas por meta",
+    ],
+    image: courseImageColor,
+    imageAlt: "Cameraman em campo de futebol",
     glow:
       "radial-gradient(120% 120% at 0% 100%, rgba(255,180,120,0.2), transparent 70%)",
   },
@@ -243,7 +309,7 @@ const CursosPage = () => {
                 <motion.div
                   key={pillar.title}
                   variants={fadeUp}
-                  className="group relative overflow-hidden border border-border/60 bg-card/70 p-6 transition-all duration-700 hover:border-primary/40 hover:shadow-[0_25px_60px_rgba(0,0,0,0.45)]"
+                  className="group relative overflow-hidden border border-border/60 bg-card/70 p-6 transition-all duration-700 hover:border-primary/40 hover:shadow-[var(--shadow-card)]"
                 >
                   <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100 bg-[radial-gradient(80%_80%_at_0%_0%,rgba(255,200,120,0.18),transparent_70%)]" />
                   <div className="relative space-y-3">
@@ -260,7 +326,7 @@ const CursosPage = () => {
 
       <section className="relative py-20 md:py-28 bg-muted/20 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(55%_40%_at_85%_10%,rgba(30,120,120,0.16),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(10,10,10,0.6),rgba(10,10,10,0.1))]" />
+        <div className="absolute inset-0 bg-[image:var(--overlay-panel)]" />
         <div className="container relative">
           <motion.div
             variants={stagger}
@@ -379,13 +445,13 @@ const CursosPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1, ease: easeCinema }}
                   viewport={{ once: true, margin: "-120px" }}
-                  className="group relative overflow-hidden border border-border/60 bg-card/40 p-8 md:p-12 transition-all duration-700 hover:border-primary/50 hover:shadow-[0_25px_80px_rgba(0,0,0,0.5)]"
+                  className="group relative overflow-hidden border border-border/60 bg-card/40 p-8 md:p-12 transition-all duration-700 hover:border-primary/50 hover:shadow-[var(--shadow-card-strong)]"
                 >
                   <div
                     className="pointer-events-none absolute inset-0 opacity-80"
                     style={{ backgroundImage: course.glow }}
                   />
-                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(9,9,9,0.92),rgba(9,9,9,0.7))]" />
+                  <div className="pointer-events-none absolute inset-0 bg-[image:var(--overlay-card)]" />
 
                   <div className="relative grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
                     <div className="relative aspect-[4/3] overflow-hidden border border-border/60 bg-muted/40 lg:aspect-auto lg:min-h-[320px]">
@@ -396,7 +462,7 @@ const CursosPage = () => {
                         sizes="(min-width: 1024px) 40vw, 90vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,8,8,0.05),rgba(8,8,8,0.85))]" />
+                      <div className="absolute inset-0 bg-[image:var(--overlay-image)]" />
                       <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2">
                         <span className="text-[0.6rem] uppercase tracking-[0.32em] text-foreground/80 border border-border/60 bg-background/40 px-3 py-1">
                           {course.subtitle}
@@ -460,6 +526,135 @@ const CursosPage = () => {
         </div>
       </section>
 
+      <section className="relative py-24 md:py-32 overflow-hidden bg-muted/10">
+        <div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_90%_20%,rgba(255,200,120,0.1),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(50%_35%_at_15%_80%,rgba(30,120,120,0.12),transparent_70%)]" />
+        <div className="container relative">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-120px" }}
+            className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between mb-12"
+          >
+            <div className="space-y-4">
+              <motion.p variants={fadeUp} className="text-editorial text-primary">
+                Para concursos
+              </motion.p>
+              <motion.h2
+                variants={fadeUp}
+                className="text-display text-4xl md:text-5xl lg:text-6xl text-foreground"
+              >
+                Concursos com profundidade
+                <span className="block text-primary italic">Detalhe visual que vira método.</span>
+              </motion.h2>
+            </div>
+            <motion.p
+              variants={fadeUp}
+              className="text-lg text-muted-foreground font-light max-w-xl"
+            >
+              Preparação estruturada para provas, banca e portfólio com prática orientada e feedback
+              detalhado.
+            </motion.p>
+          </motion.div>
+
+          <div className="space-y-10">
+            {contests.map((contest, index) => {
+              const meta = [
+                { icon: Clock, label: "Duração", value: contest.duration },
+                { icon: Users, label: "Turma", value: contest.students },
+                { icon: Award, label: "Nível", value: contest.level },
+                { icon: Camera, label: "Formato", value: contest.format },
+              ];
+
+              return (
+                <motion.article
+                  key={contest.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1, ease: easeCinema }}
+                  viewport={{ once: true, margin: "-120px" }}
+                  className="group relative overflow-hidden border border-border/60 bg-card/40 p-8 md:p-12 transition-all duration-700 hover:border-primary/50 hover:shadow-[var(--shadow-card-strong)]"
+                >
+                  <div
+                    className="pointer-events-none absolute inset-0 opacity-80"
+                    style={{ backgroundImage: contest.glow }}
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-[image:var(--overlay-card)]" />
+
+                  <div className="relative grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+                    <div className="relative aspect-[4/3] overflow-hidden border border-border/60 bg-muted/40 lg:aspect-auto lg:min-h-[320px]">
+                      <Image
+                        src={contest.image}
+                        alt={contest.imageAlt}
+                        fill
+                        sizes="(min-width: 1024px) 40vw, 90vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-[image:var(--overlay-image)]" />
+                      <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2">
+                        <span className="text-[0.6rem] uppercase tracking-[0.32em] text-foreground/80 border border-border/60 bg-background/40 px-3 py-1">
+                          {contest.subtitle}
+                        </span>
+                        {contest.badge ? (
+                          <span className="text-[0.6rem] uppercase tracking-[0.32em] border border-primary/40 px-3 py-1 text-primary/90 bg-background/40">
+                            {contest.badge}
+                          </span>
+                        ) : null}
+                      </div>
+                    </div>
+
+                    <div className="space-y-6">
+                      <h3 className="font-display text-3xl md:text-4xl text-foreground group-hover:text-primary transition-colors">
+                        {contest.title}
+                      </h3>
+                      <p className="text-muted-foreground font-light text-base md:text-lg">
+                        {contest.description}
+                      </p>
+
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        {meta.map((item) => (
+                          <div key={item.label} className="border border-border/60 bg-muted/30 px-4 py-4">
+                            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                              <item.icon className="h-4 w-4 text-primary" />
+                              {item.label}
+                            </div>
+                            <p className="mt-3 text-sm text-foreground">{item.value}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="space-y-3">
+                        <p className="text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
+                          Destaques
+                        </p>
+                        <ul className="space-y-2 text-sm text-muted-foreground font-light">
+                          {contest.highlights.map((highlight) => (
+                            <li key={highlight} className="flex items-start gap-2">
+                              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary/60" />
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <Link
+                        href="/contato"
+                        className="group inline-flex items-center justify-center border border-primary/50 px-6 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background"
+                      >
+                        <span className="transition-transform duration-300 group-hover:-translate-y-0.5">
+                          Saber mais
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
         <div className="absolute -top-24 right-[-10%] h-64 w-64 rounded-full bg-primary/10 blur-3xl animate-pulse-soft" />
@@ -498,7 +693,7 @@ const CursosPage = () => {
             <motion.div variants={fadeUp}>
               <Link
                 href="/contato"
-                className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(255,200,120,0.2)] mt-10"
+                className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[var(--shadow-glow)] mt-10"
               >
                 <span className="transition-transform duration-300 group-hover:-translate-y-0.5">
                   Fale connosco

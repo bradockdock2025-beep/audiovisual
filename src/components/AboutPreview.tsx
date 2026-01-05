@@ -49,7 +49,7 @@ export function AboutPreview() {
           >
             <div className="relative group">
               <div className="absolute -inset-6 bg-[radial-gradient(circle,rgba(255,200,120,0.18),transparent_70%)] opacity-60 blur-2xl transition-opacity duration-700 group-hover:opacity-90" />
-              <div className="relative aspect-[3/4] overflow-hidden border border-border/60 bg-muted shadow-[0_20px_60px_rgba(0,0,0,0.55)] transition-all duration-700 group-hover:border-primary/40 group-hover:shadow-[0_30px_80px_rgba(255,200,120,0.2)]">
+              <div className="relative aspect-[3/4] overflow-hidden border border-border/60 bg-muted shadow-[var(--shadow-card)] transition-all duration-700 group-hover:border-primary/40 group-hover:shadow-[var(--shadow-card-glow)]">
                 <motion.div
                   animate={isInView ? { y: [0, -10, 0] } : {}}
                   transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
@@ -64,7 +64,7 @@ export function AboutPreview() {
                   />
                 </motion.div>
 
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,6,6,0.05),rgba(8,8,8,0.7),rgba(120,90,40,0.65))]" />
+                <div className="absolute inset-0 bg-[image:var(--overlay-image-strong)]" />
                 <div className="absolute inset-0 film-grain" />
                 <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_30%_70%,rgba(255,200,120,0.18),transparent_55%)]" />
 
@@ -104,7 +104,7 @@ export function AboutPreview() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-primary italic drop-shadow-[0_0_18px_rgba(255,200,120,0.35)]"
+                className="text-primary italic drop-shadow-[var(--shadow-text-glow)]"
               >
                 visão
               </motion.span>
@@ -152,7 +152,7 @@ export function AboutPreview() {
             <MotionLink
               variants={contentItem}
               href="/sobre"
-              className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(255,200,120,0.2)]"
+              className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[var(--shadow-glow)]"
             >
               <span className="transition-transform duration-300 group-hover:-translate-y-0.5">
                 Conhecer o estúdio

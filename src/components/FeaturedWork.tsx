@@ -181,7 +181,7 @@ export function FeaturedWork() {
                     onClick={() => setActiveCategory(category.key)}
                     className={`relative px-4 py-2 text-[0.6rem] uppercase tracking-[0.32em] border backdrop-blur-sm transition-all duration-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/70 ${
                       isActive
-                        ? "text-primary font-semibold border-primary/60 bg-cinema-surface-elevated/70 shadow-[0_0_20px_rgba(255,200,120,0.18)]"
+                        ? "text-primary font-semibold border-primary/60 bg-cinema-surface-elevated/70 shadow-[var(--shadow-glow-soft)]"
                         : "text-muted-foreground border-border/60 bg-cinema-surface/60 hover:text-foreground hover:border-primary/40"
                     }`}
                   >
@@ -247,7 +247,7 @@ export function FeaturedWork() {
         >
           <Link
             href="/portfolio"
-            className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(255,200,120,0.2)]"
+            className="group inline-flex items-center justify-center border border-primary/60 px-8 py-3 text-[0.7rem] uppercase tracking-[0.32em] text-primary/90 transition-all duration-400 hover:bg-primary hover:text-background hover:shadow-[var(--shadow-glow)]"
           >
             <span className="transition-transform duration-300 group-hover:-translate-y-0.5">
               Ver todos os projetos
@@ -274,7 +274,7 @@ function FeaturedProjectCard({ project, isInView }: { project: Project; isInView
         <div className="absolute inset-0 bg-background/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-primary/60 bg-background/30 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(255,200,120,0.35)]">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-primary/60 bg-background/30 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:border-primary group-hover:shadow-[var(--shadow-glow-strong)]">
             <Play className="w-6 h-6 text-primary ml-1 transition-transform duration-500 group-hover:scale-110 group-hover:animate-pulse-soft" />
           </div>
         </div>
@@ -314,7 +314,7 @@ function SecondaryProjectCard({ project }: { project: Project }) {
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
 
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center bg-background/25 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(255,200,120,0.3)]">
+          <div className="w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center bg-background/25 backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:shadow-[var(--shadow-glow-strong)]">
             <Play className="w-5 h-5 text-primary ml-0.5 transition-transform duration-500 group-hover:scale-110 group-hover:animate-pulse-soft" />
           </div>
         </div>
